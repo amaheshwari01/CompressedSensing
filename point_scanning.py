@@ -97,19 +97,22 @@ if __name__ == "__main__":
     IMAGE_WIDTH = 1920
     IMAGE_HEIGHT = 1080
     
-    START_X = 500
-    START_Y = 500
+    START_X = 350
+    START_Y = 200
     END_X = START_X+700
     END_Y = START_Y+700
 
-    X_COUNT = 50
-    Y_COUNT = 50
+    X_COUNT = 16
+    Y_COUNT = 16
 
 
     PIXEL_WIDTH = (END_X - START_X) // X_COUNT
     PIXEL_HEIGHT = (END_Y - START_Y) // Y_COUNT
 
-    
+    grid = np.zeros((IMAGE_HEIGHT, IMAGE_WIDTH))
+    grid[START_Y:END_Y, START_X:END_X] = 1
+    display_grid(grid)
+    time.sleep(1)
 
     grid = np.zeros((IMAGE_HEIGHT, IMAGE_WIDTH))
 
