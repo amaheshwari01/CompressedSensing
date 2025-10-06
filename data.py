@@ -83,18 +83,18 @@ def measure(channel):
     return voltage
 
 
-for i in range(1, 100000):
-    # wait 1 second between readings
-    time.sleep(0.1)
-    # fetch analogIO status from device
-    if dwf.FDwfAnalogIOStatus(hdwf) == 0:
-        break
+# for i in range(1, 100000):
+#     # wait 1 second between readings
+#     time.sleep(0.1)
+#     # fetch analogIO status from device
+#     if dwf.FDwfAnalogIOStatus(hdwf) == 0:
+#         break
 
-    # voltage readback
-    dwf.FDwfAnalogIOChannelNodeStatus(hdwf, c_int(0), c_int(1), byref(vpp))
-    print("Positive Supply: " + str(round(vpp.value, 3)) + " V")
-    data = measure(1)
-    print("AnalogIn Channel 1: " + str(round(data, 3)) + " V")
+#     # voltage readback
+#     dwf.FDwfAnalogIOChannelNodeStatus(hdwf, c_int(0), c_int(1), byref(vpp))
+#     print("Positive Supply: " + str(round(vpp.value, 3)) + " V")
+#     data = measure(1)
+#     print("AnalogIn Channel 1: " + str(round(data, 3)) + " V")
 
 
-dwf.FDwfDeviceClose(hdwf)
+# dwf.FDwfDeviceClose(hdwf)
